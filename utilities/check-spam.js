@@ -32,6 +32,7 @@ exports.checkSpam = (comment, ip)=> {
                 // is_test : true // Default value is false
             }, function(err, spam) {
                 if (err) console.log (`垃圾评论检测出错！${err}`);
+                spam = true;
                 if (spam) {
                     console.log('逮到一只垃圾评论，烧死它！用文火~');
                     comment.set('isSpam', true);
